@@ -1,9 +1,9 @@
 # GAN-Data-Augmentation
 ## Goal
-The goal of this research is to generate synthetic data using a Generative Adversarial Network (GAN) that can be used to augment datasets.  To test whether the trained GAN produces good data, a Convolutional Neural Network (CNN)  is trained with and without the generated data and the accuracies are compared.  If the accuracy improves when the synthetic data is added to the dataset, we can conclude that the GAN produced sufficiently high quality data to augment a dataset.
+The goal of this project is to generate synthetic data using a Generative Adversarial Network (GAN) that can be used to augment datasets.  To test whether the trained GAN produces good data, a Convolutional Neural Network (CNN)  is trained with and without the generated data and the accuracies are compared.  If the accuracy improves when the synthetic data is added to the dataset, we can conclude that the GAN produced sufficiently high quality data to augment a dataset.
 
 ## Data
-This experiment utilizes two main datasets.  The first is Google’s Speech Commands Dataset.  This dataset contains 30 different speech commands but for the purposes of this research, only the following speech commands were used: 'no', 'stop','yes', 'up', 'down', 'left', 'right'.  20% of the samples from each command were reserved for testing the accuracy of the trained CNN.  The other 80% was used for both the training of the GAN and CNN. 
+This experiment utilizes two main datasets.  The first is Google’s Speech Commands Dataset.  This dataset contains 30 different speech commands but for the purposes of this project, only the following speech commands were used: 'no', 'stop','yes', 'up', 'down', 'left', 'right'.  20% of the samples from each command were reserved for testing the accuracy of the trained CNN.  The other 80% was used for both the training of the GAN and CNN. 
 
 The second dataset is the Fashion-MNIST data which consists of a training set of 60,000 samples and a test set of 10,000 samples.  Each sample is a 28x28 grayscale image, associated with a label from 10 classes.
 
