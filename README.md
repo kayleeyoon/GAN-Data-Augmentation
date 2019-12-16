@@ -1,6 +1,4 @@
 # GAN-Data-Augmentation
-## Goal
-The goal of this project is to generate synthetic data using a Generative Adversarial Network (GAN) that can be used to augment datasets.  To test whether the trained GAN produces good data, a Convolutional Neural Network (CNN)  is trained with and without the generated data and the accuracies are compared.  If the accuracy improves when the synthetic data is added to the dataset, we can conclude that the GAN produced sufficiently high quality data to augment a dataset.
 
 ## Data
 This experiment utilizes two main datasets.  The first is Google’s Speech Commands Dataset.  This dataset contains 30 different speech commands but for the purposes of this project, only the following speech commands were used: 'no', 'stop','yes', 'up', 'down', 'left', 'right'.  20% of the samples from each command were reserved for testing the accuracy of the trained CNN.  The other 80% was used for both the training of the GAN and CNN. 
@@ -14,3 +12,6 @@ Because GANs are traditionally used to generate images, I decided to convert all
 GANs are known for being difficult to train due to its instability.  Some of the problems I faced while training a Deep Convolutional GAN (DCGAN) was that the  model parameters became unstable and never converged or the discriminator became so good at distinguishing real and fake samples that its gradient vanished and the generator was unable to learn anything meaningful.
 
 To overcome these challenges, I utilized the architecture of a Progressive Growing GAN.  This GAN is based on the research paper published in 2017 titled “Progressive Growing of GANs for Improved Quality, Stability, and Variation”.  The researchers who contributed to that paper were able to generate extremely realistic high-definition 1024x1024 images of celebrities.  Their approach starts with training the GAN on smaller images and then incrementally increasing the size of the images until they reach the desired output resolution.  The training process involves period of fine-tuning the model and periods of slowly phasing in new layers, with larger resolutions.  The new layers are added in gradually to avoid sudden shocks to the already trained smaller-resolution layers.  This architecture works well because the model is able to focus on general shapes first, and then move on to the details.  In a typical GAN all the details have to be learned simultaneously which makes it more unstable.  My model for the audio data starts with a 16x4 image, then increases to 32x8, 64x16, and finally 128x32.  The architecture I used for the Fashion-MNIST dataset started with a 7x7 image, then increased to 14x14, and finally to 28x28.
+
+## Samples
+
